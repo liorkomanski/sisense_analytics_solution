@@ -48,7 +48,7 @@ It looks like this:
 
 ### Congratulation you set-up the sisense analytics cube !!!!!
 
-10.You can set-up as admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
+10. You can set-up as admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
 
 [Example link](https://support.sisense.com/hc/en-us/articles/230646488-Schedule-sequential-ElastiCube-builds-using-windows-task-scheduler)
 
