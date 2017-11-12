@@ -25,7 +25,7 @@ It looks like this:
 ![image](https://user-images.githubusercontent.com/7319365/32697741-fc52c752-c79f-11e7-8580-98094a47e9f4.png)
 
 
-###In case this is your first set-up:
+### In case this is your first set-up:
 
 6. Go to "C:\sisense_analytics\sisense_analytics_solution-master\admin" and open "sisense_analytics.ecube"
 
