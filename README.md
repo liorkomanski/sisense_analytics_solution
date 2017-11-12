@@ -8,11 +8,14 @@ Steps:
 Note: Make sure that you create folder with the same name and syntax "sisense_analytics"
 ```
 
-2. Download this "sisense_analytics_exe" repository with zip option to your Sisense server.
+2. Download this "sisense_analytics_solution repository with zip option to your Sisense server.
 
-![image](https://user-images.githubusercontent.com/7319365/32697719-86d809ce-c79f-11e7-803d-c6dd7bacb259.png)
+![image](https://user-images.githubusercontent.com/7319365/32697769-bd4213dc-c7a0-11e7-8c78-a0a2b24bdddb.png)
+
 
 3. Unzip the "sisense_analytics_exe" repository to the new folder "C:\sisense_analytics".
+
+![image](https://user-images.githubusercontent.com/7319365/32697719-86d809ce-c79f-11e7-803d-c6dd7bacb259.png)
 
 4. If you have Sisense version 6.7 and above, make sure you create WriteUser for accessing your mongo.
 
