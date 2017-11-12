@@ -21,14 +21,11 @@ Note: Make sure that you create folder with the same name and syntax "sisense_an
 5. Go to "C:\sisense_analytics\sisense_analytics_solution-master" open configuration file ("sisense_analytics_config.ini") and add WriteUser and password.
 
 It looks like this:
-```
-[mongo_auth]
-;ReadUser, AppUser, WriteUser
-user = WriteUser 
-password = sisense1234
-```
 
-In case this is your first set-up:
+![image](https://user-images.githubusercontent.com/7319365/32697741-fc52c752-c79f-11e7-8580-98094a47e9f4.png)
+
+
+###In case this is your first set-up:
 
 6. Go to "C:\sisense_analytics\sisense_analytics_solution-master\admin" and open "sisense_analytics.ecube"
 
