@@ -44,11 +44,15 @@ It looks like this:
 "C:\sisense_analytics\widgets.csv"
 ```
 
-9. Run full build to "sisense_analytics.ecube".
+9. Run full build to ""C:\sisense_analytics\sisense_analytics_solution-master\admin\sisense_analytics.ecube".
 
 ### Congratulation you set-up the sisense analytics cube !!!!!
 
-10.You can set-up as admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
+10. Import ""C:\sisense_analytics\sisense_analytics_solution-master\admin\sisense_analytics.dash" to your sisense web.
+
+[Import dash file guide](https://documentation.sisense.com/exporting-importing-dashboards)
+
+11.You can set-up as admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
 
 [Example link](https://support.sisense.com/hc/en-us/articles/230646488-Schedule-sequential-ElastiCube-builds-using-windows-task-scheduler)
 
@@ -56,9 +60,11 @@ It looks like this:
 Note: You can test the build by just double click your bat file.
 ```
 
-11. You can monitor you last build activity with this log:
+12. You can monitor you last build activity with this log:
 
 ```
 "C:\Sisense Analytics\sisense_analytics_last_log.txt"
 ```
+
+
 
