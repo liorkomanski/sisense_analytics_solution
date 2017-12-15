@@ -47,8 +47,6 @@ It looks like this:
 ![image](https://user-images.githubusercontent.com/7319365/32697741-fc52c752-c79f-11e7-8580-98094a47e9f4.png)
 
 
-### In case this is your first set-up:
-
 #### 6. Go to "C:\sisense_analytics\sisense_analytics_solution-master\admin" and open "sisense_analytics.ecube"
 
 #### 7. Run "C:\sisense_analytics\sisense_analytics_solution-master\sisense_analytics.exe" as admin.
@@ -68,7 +66,7 @@ It looks like this:
 
 #### 9. Run full build to ""C:\sisense_analytics\sisense_analytics_solution-master\admin\sisense_analytics.ecube".
 
-#### Congratulation you set-up the sisense analytics cube !!!!!
+## Congratulation you set-up the sisense analytics cube !!!!!
 
 #### 10. Import dashboard files to your Sisense web. 
 
