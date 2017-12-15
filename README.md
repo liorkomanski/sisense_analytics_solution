@@ -50,11 +50,11 @@ It looks like this:
 
 ### Congratulation you set-up the sisense analytics cube !!!!!
 
-10. Import ""C:\sisense_analytics\sisense_analytics_solution-master\admin\sisense_analytics.dash" to your sisense web.
+10. Import dashboard files to your Sisense web. 
 
-[Import dash file guide](https://documentation.sisense.com/exporting-importing-dashboards)
+[Dash  files Download link and guide](https://github.com/dankush/sisense_analytics_solution/releases/tag/0.1)
 
-11.You can set-up as admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
+11.You can set-up as Admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
 
 [Example link](https://support.sisense.com/hc/en-us/articles/230646488-Schedule-sequential-ElastiCube-builds-using-windows-task-scheduler)
 
