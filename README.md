@@ -18,8 +18,6 @@ Note: Make sure that you create folder with the same name and syntax "sisense_an
 
 #### 4. If you have Sisense version 6.7 and above, make sure you create WriteUser for accessing your mongo.
 
-![image](https://user-images.githubusercontent.com/7319365/34046233-0829819a-e1b5-11e7-8b06-9500bfbd94e5.png)
-
 * Open the Sisense Web Application and go to the "Admin" screen.
 * Click on the "REST API" tab.
 * Click on the blue "REST API Reference" link.
@@ -36,6 +34,9 @@ Note: Make sure that you create folder with the same name and syntax "sisense_an
 * Click "RUN" and make sure you receive 200 response massage.
 
 The POST screen will look like this.
+
+![image](https://user-images.githubusercontent.com/7319365/34046233-0829819a-e1b5-11e7-8b06-9500bfbd94e5.png)
+
 [Documentation link](https://documentation.sisense.com/accessing-sisense-application-database)
 
 
