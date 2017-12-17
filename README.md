@@ -1,7 +1,7 @@
 # Sisense Analytics
 
 
-### Zero to one steps:
+### Setting Up guide:
 
 #### 1. Create new folder "C:\sisense_analytics"
 ```
@@ -46,6 +46,14 @@ It looks like this:
 
 ![image](https://user-images.githubusercontent.com/7319365/32697741-fc52c752-c79f-11e7-8580-98094a47e9f4.png)
 
+```
+Note: In case your Sisense mongo located on a different server and port. you can modify it in the config file under "mongo_location" section.
+
+[mongo_location]
+ip=localhost
+port=27018
+
+```
 
 #### 6. Go to "C:\sisense_analytics\sisense_analytics_solution-master\admin" and open "sisense_analytics.ecube"
 
@@ -70,7 +78,10 @@ It looks like this:
 
 #### 10. Import dashboard files to your Sisense web. 
 
-[Dash  files Download link and guide](https://github.com/dankush/sisense_analytics_solution/releases/tag/0.1)
+* Go to "C:\sisense_analytics\sisense_analytics_solution-master\admin"
+* Import dashboard files (1Overview.dash, 2UsersActivity.dash, 3Dashboard.dash) to your Sisense web.
+*[Import dash file guide](https://documentation.sisense.com/exporting-importing-dashboards)
+
 
 #### 11. You can set-up as Admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
 
