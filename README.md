@@ -87,14 +87,13 @@ port=27018
 #### 11. You can set-up as Admin schedule builds with the "C:\sisense_analytics\sisense_analytics_solution-master\admin\build_sisense_analytics.bat" file.
 
 ```
-Note: Using regular schedule builds won't load new data to the elasticubes. Executing batch file required.
+Notes: 
+* Using regular schedule builds won't load new data to the elasticubes. Executing batch file required.
+* You can test the build by just double click your batch file.
 ```
 
 [Example link](https://support.sisense.com/hc/en-us/articles/230646488-Schedule-sequential-ElastiCube-builds-using-windows-task-scheduler)
 
-```
-Note: You can test the build by just double click your bat file.
-```
 
 #### 12. You can monitor you last build activity with this log:
 
