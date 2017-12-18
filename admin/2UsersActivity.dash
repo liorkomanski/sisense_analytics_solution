@@ -1,24 +1,160 @@
 {
-  "title": "2. Users Activity",
-  "desc": "",
-  "source": null,
-  "type": "dashboard",
-  "style": {
-    "name": "vivid",
-    "palette": {
-      "_id": "58568303ec15d6e901b7d8ee",
-      "colors": [
-        "#F89C33",
-        "#808080",
-        "#FBC730",
-        "#EC6333"
-      ],
-      "name": "Sisense",
-      "isDefault": false,
-      "sortOrder": 40,
-      "isSystem": true
-    }
+  "datasource": {
+    "title": "sisense_analytics",
+    "fullname": "LocalHost/sisense_analytics",
+    "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
+    "address": "LocalHost",
+    "database": "asisenseXwAaanalytics"
   },
+  "desc": "",
+  "editing": true,
+  "filterToDatasourceMapping": {
+    "aLOCALHOST_aSISENSEXwAaANALYTICS": [
+      "[Dim_Dashboards.Dashboard_Title]",
+      "[Dim_Users.Role]",
+      "[Dim_Date.Date (Calendar)]",
+      "[Dim_Dashboards.ElastiCube_Name]",
+      "[Dim_Users.userName]"
+    ]
+  },
+  "filters": [
+    {
+      "jaql": {
+        "table": "Dim_Dashboards",
+        "column": "Dashboard_Title",
+        "dim": "[Dim_Dashboards.Dashboard_Title]",
+        "datatype": "text",
+        "merged": true,
+        "title": "Dashboard_Title",
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        },
+        "collapsed": true
+      },
+      "instanceid": "C7260-FA5F-BA",
+      "isCascading": false
+    },
+    {
+      "jaql": {
+        "table": "Dim_Users",
+        "column": "userName",
+        "dim": "[Dim_Users.userName]",
+        "datatype": "text",
+        "merged": true,
+        "title": "userName",
+        "collapsed": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "2BF67-9472-D7",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "Dim_Users",
+        "column": "Role",
+        "dim": "[Dim_Users.Role]",
+        "datatype": "text",
+        "merged": true,
+        "title": "Role",
+        "collapsed": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "EA4B2-43D1-B5",
+      "isCascading": false
+    },
+    {
+      "instanceid": "96378-A5AF-2B",
+      "isCascading": true,
+      "levels": [
+        {
+          "table": "Dim_Date",
+          "column": "Date",
+          "dim": "[Dim_Date.Date (Calendar)]",
+          "datatype": "datetime",
+          "merged": true,
+          "title": "Months in Date",
+          "level": "months",
+          "collapsed": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          },
+          "panel": "scope"
+        },
+        {
+          "table": "Dim_Date",
+          "column": "Date",
+          "dim": "[Dim_Date.Date (Calendar)]",
+          "datatype": "datetime",
+          "merged": true,
+          "title": "Weeks in Date",
+          "level": "weeks",
+          "firstday": "mon",
+          "collapsed": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          },
+          "panel": "scope"
+        },
+        {
+          "table": "Dim_Date",
+          "column": "Date",
+          "dim": "[Dim_Date.Date (Calendar)]",
+          "datatype": "datetime",
+          "merged": true,
+          "title": "Days in Date",
+          "level": "days",
+          "collapsed": true,
+          "filter": {
+            "explicit": false,
+            "multiSelection": true,
+            "all": true
+          }
+        }
+      ],
+      "model": {
+        "instanceid": "34DB0-A824-AF",
+        "__store": [
+          "[Dim_Date.Date (Calendar)]",
+          "[Dim_Date.Date (Calendar)]",
+          "[Dim_Date.Date (Calendar)]"
+        ]
+      },
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "Dim_Dashboards",
+        "column": "ElastiCube_Name",
+        "dim": "[Dim_Dashboards.ElastiCube_Name]",
+        "datatype": "text",
+        "merged": true,
+        "title": "ElastiCube_Name",
+        "collapsed": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "D3359-02E2-2A",
+      "isCascading": false
+    }
+  ],
   "layout": {
     "instanceid": "98FC6-3151-0D",
     "type": "columnar",
@@ -170,14 +306,14 @@
                     "maxHeight": 1024,
                     "minWidth": 128,
                     "maxWidth": 2048,
-                    "height": 512,
+                    "height": "340px",
                     "defaultWidth": 512,
                     "widgetid": "5a32732f3e495e00350000b3"
                   }
                 ],
                 "width": 100,
                 "stretchable": false,
-                "pxlWidth": 959,
+                "pxlWidth": 1439,
                 "index": 0
               }
             ]
@@ -188,172 +324,32 @@
       }
     ]
   },
-  "original": null,
-  "datasource": {
-    "title": "sisense_analytics",
-    "fullname": "LocalHost/sisense_analytics",
-    "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
-    "address": "LocalHost",
-    "database": "asisenseXwAaanalytics"
-  },
-  "editing": true,
-  "filterToDatasourceMapping": {
-    "aLOCALHOST_aSISENSEXwAaANALYTICS": [
-      "[Dim_Dashboards.Dashboard_Title]",
-      "[Dim_Users.Role]",
-      "[Dim_Date.Date (Calendar)]",
-      "[Dim_Dashboards.ElastiCube_Name]",
-      "[Dim_Users.userName]"
-    ]
-  },
-  "filters": [
-    {
-      "jaql": {
-        "table": "Dim_Users",
-        "column": "userName",
-        "dim": "[Dim_Users.userName]",
-        "datatype": "text",
-        "merged": true,
-        "title": "userName",
-        "collapsed": true,
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        }
-      },
-      "instanceid": "2BF67-9472-D7",
-      "isCascading": false,
-      "disabled": false
-    },
-    {
-      "jaql": {
-        "table": "Dim_Users",
-        "column": "Role",
-        "dim": "[Dim_Users.Role]",
-        "datatype": "text",
-        "merged": true,
-        "title": "Role",
-        "collapsed": true,
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        }
-      },
-      "instanceid": "EA4B2-43D1-B5",
-      "isCascading": false
-    },
-    {
-      "jaql": {
-        "table": "Dim_Dashboards",
-        "column": "Dashboard_Title",
-        "dim": "[Dim_Dashboards.Dashboard_Title]",
-        "datatype": "text",
-        "merged": true,
-        "title": "Dashboard_Title",
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        },
-        "collapsed": true
-      },
-      "instanceid": "C7260-FA5F-BA",
-      "isCascading": false
-    },
-    {
-      "instanceid": "96378-A5AF-2B",
-      "isCascading": true,
-      "levels": [
-        {
-          "table": "Dim_Date",
-          "column": "Date",
-          "dim": "[Dim_Date.Date (Calendar)]",
-          "datatype": "datetime",
-          "merged": true,
-          "title": "Months in Date",
-          "level": "months",
-          "collapsed": true,
-          "filter": {
-            "explicit": false,
-            "multiSelection": true,
-            "all": true
-          },
-          "panel": "scope"
-        },
-        {
-          "table": "Dim_Date",
-          "column": "Date",
-          "dim": "[Dim_Date.Date (Calendar)]",
-          "datatype": "datetime",
-          "merged": true,
-          "title": "Weeks in Date",
-          "level": "weeks",
-          "firstday": "mon",
-          "collapsed": true,
-          "filter": {
-            "explicit": false,
-            "multiSelection": true,
-            "all": true
-          },
-          "panel": "scope"
-        },
-        {
-          "table": "Dim_Date",
-          "column": "Date",
-          "dim": "[Dim_Date.Date (Calendar)]",
-          "datatype": "datetime",
-          "merged": true,
-          "title": "Days in Date",
-          "level": "days",
-          "collapsed": true,
-          "filter": {
-            "explicit": false,
-            "multiSelection": true,
-            "all": true
-          }
-        }
-      ],
-      "model": {
-        "instanceid": "34DB0-A824-AF",
-        "__store": [
-          "[Dim_Date.Date (Calendar)]",
-          "[Dim_Date.Date (Calendar)]",
-          "[Dim_Date.Date (Calendar)]"
-        ]
-      },
-      "disabled": false
-    },
-    {
-      "jaql": {
-        "table": "Dim_Dashboards",
-        "column": "ElastiCube_Name",
-        "dim": "[Dim_Dashboards.ElastiCube_Name]",
-        "datatype": "text",
-        "merged": true,
-        "title": "ElastiCube_Name",
-        "collapsed": true,
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        }
-      },
-      "instanceid": "D3359-02E2-2A",
-      "isCascading": false
-    }
-  ],
   "oid": "5a3271a13e495e00350000af",
-  "parentFolder": "5a296ee599d8904878db8a0a",
+  "original": null,
+  "parentFolder": "5a2fe04cffc201ec16000134",
+  "source": null,
+  "style": {
+    "name": "vivid",
+    "palette": {
+      "_id": "58568303ec15d6e901b7d8ee",
+      "colors": [
+        "#F89C33",
+        "#808080",
+        "#FBC730",
+        "#EC6333"
+      ],
+      "name": "Sisense",
+      "isDefault": false,
+      "sortOrder": 40,
+      "isSystem": true
+    }
+  },
+  "title": "2. Users Activity",
+  "type": "dashboard",
   "widgets": [
     {
-      "title": "Error Codes by User",
-      "type": "chart/bar",
-      "subtype": "bar/stacked",
-      "oid": "5a32858f3e495e003500011d",
-      "desc": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
-      "source": null,
+      "canEditFilters": true,
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -362,7 +358,35 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-14T00:00:00"
       },
-      "selection": null,
+      "desc": "https://en.wikipedia.org/wiki/List_of_HTTP_status_codes",
+      "disableSelctor": false,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "BB8FE-8BF3-4D",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -425,47 +449,7 @@
                   "datatype": "numeric",
                   "title": "Response_Code"
                 },
-                "format": {
-                  "members": {
-                    "200": {
-                      "color": "#F89C33",
-                      "title": "200"
-                    },
-                    "201": {
-                      "color": "#808080",
-                      "title": "201"
-                    },
-                    "204": {
-                      "color": "#FBC730",
-                      "title": "204"
-                    },
-                    "304": {
-                      "color": "#EC6333",
-                      "title": "304",
-                      "inResultset": true
-                    },
-                    "400": {
-                      "color": "#ffa946",
-                      "title": "400",
-                      "inResultset": true
-                    },
-                    "401": {
-                      "color": "#939393",
-                      "title": "401",
-                      "inResultset": true
-                    },
-                    "403": {
-                      "color": "#ffcf45",
-                      "title": "403",
-                      "inResultset": true
-                    },
-                    "404": {
-                      "color": "#ff7241",
-                      "title": "404",
-                      "inResultset": true
-                    }
-                  }
-                }
+                "format": {}
               }
             ]
           },
@@ -520,36 +504,7 @@
           }
         ]
       },
-      "canEditFilters": true,
-      "dashboardid": "5a3271a13e495e00350000af",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "BB8FE-8BF3-4D",
+      "oid": "5a32858f3e495e003500011d",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -557,8 +512,10 @@
         "autoUpdateOnEveryChange": true,
         "drillToAnywhere": true
       },
-      "queryStartTime": "2017-12-14T00:00:00",
+      "queryStartTime": "2017-12-15T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": true,
@@ -624,18 +581,16 @@
           "enabled": true
         }
       },
+      "subtype": "bar/stacked",
+      "title": "Error Codes by User",
+      "type": "chart/bar",
       "viewState": {
         "activeTab": "filters"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "",
-      "type": "indicator",
-      "subtype": "indicator/numeric",
-      "oid": "5a3295043e495e003500018c",
-      "desc": null,
-      "source": null,
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -644,7 +599,37 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "indicatorInstance": {
+        "type": "numericSimple"
+      },
+      "instanceid": "9BF30-59CD-E1",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -678,7 +663,6 @@
                     "isdefault": true
                   },
                   "color": {
-                    "color": "#F89C33",
                     "type": "color"
                   }
                 }
@@ -703,37 +687,19 @@
           }
         ]
       },
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
+      "oid": "5a3295043e495e003500018c",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
       },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "indicatorInstance": {
-        "type": "numericSimple"
-      },
-      "instanceid": "9BF30-59CD-E1",
-      "queryStartTime": "2017-12-14T00:00:00",
+      "queryStartTime": "2017-12-15T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "subtype": "simple",
         "skin": "vertical",
@@ -792,27 +758,16 @@
           }
         }
       },
+      "subtype": "indicator/numeric",
+      "title": "",
+      "type": "indicator",
       "viewState": {
         "activeTab": "filters"
       },
-      "widgetTimingLoged": true,
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "disallowSelector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "supportsHierarchies": false
-      },
-      "dashboardid": "5a3271a13e495e00350000af"
+      "widgetTimingLoged": false
     },
     {
-      "title": "Activity Trends",
-      "type": "chart/line",
-      "subtype": "line/basic",
-      "oid": "5a32732f3e495e00350000b3",
-      "desc": null,
-      "source": null,
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -821,7 +776,35 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "disableSelctor": false,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "75E5C-924D-D6",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -950,35 +933,7 @@
           }
         ]
       },
-      "dashboardid": "5a3271a13e495e00350000af",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "75E5C-924D-D6",
+      "oid": "5a32732f3e495e00350000b3",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -986,8 +941,10 @@
         "autoUpdateOnEveryChange": true,
         "drillToAnywhere": true
       },
-      "queryStartTime": "2017-12-14T00:00:00",
+      "queryStartTime": "2017-12-18T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "lineWidth": {
           "width": "bold"
@@ -1060,18 +1017,17 @@
           "categoriesCapacity": 100000
         }
       },
+      "subtype": "line/basic",
+      "title": "Activity Trends",
+      "type": "chart/line",
       "viewState": {
         "activeTab": "filters"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "Users Login Information by Role",
-      "type": "pivot",
-      "subtype": "pivot",
-      "oid": "5a327fdc3e495e003500010f",
-      "desc": null,
-      "source": null,
+      "colorSettingsArr": [],
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1080,7 +1036,33 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-14T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "3B600-A2D9-88",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -1111,11 +1093,25 @@
                   "dim": "[Dim_Users.userName]",
                   "datatype": "text",
                   "merged": true,
-                  "title": "userName"
+                  "title": "User"
                 },
                 "field": {
                   "id": "[Dim_Users.userName]",
                   "index": 1
+                }
+              },
+              {
+                "jaql": {
+                  "table": "Dim_Users",
+                  "column": "active",
+                  "dim": "[Dim_Users.active]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "Is User Active"
+                },
+                "field": {
+                  "id": "[Dim_Users.active]",
+                  "index": 2
                 }
               },
               {
@@ -1126,7 +1122,7 @@
                   "datatype": "datetime",
                   "merged": true,
                   "level": "days",
-                  "title": "Days in lastLogin"
+                  "title": "Last Login"
                 },
                 "format": {
                   "mask": {
@@ -1140,7 +1136,7 @@
                 },
                 "field": {
                   "id": "[Dim_Users.lastLogin (Calendar)]_days",
-                  "index": 2
+                  "index": 3
                 },
                 "hierarchies": [
                   "calendar",
@@ -1162,7 +1158,7 @@
                   "title": "Total Days_Since_Login",
                   "sort": "desc",
                   "sortDetails": {
-                    "field": 3,
+                    "field": 4,
                     "dir": "desc",
                     "measurePath": null,
                     "sortingLastDimension": "sum",
@@ -1196,7 +1192,7 @@
                 },
                 "field": {
                   "id": "[Dim_Users.Days_Since_Login]_sum",
-                  "index": 3
+                  "index": 4
                 }
               }
             ]
@@ -1211,8 +1207,50 @@
           }
         ]
       },
-      "colorSettingsArr": [],
+      "oid": "5a327fdc3e495e003500010f",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "triggersDomready": true,
+        "drillToAnywhere": true,
+        "autoUpdateOnEveryChange": true
+      },
+      "queryStartTime": "2017-12-18T00:00:00",
+      "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
+      "style": {
+        "pageSize": 25,
+        "automaticHeight": false,
+        "colors": {
+          "rows": true,
+          "columns": false,
+          "headers": false,
+          "members": false,
+          "totals": false
+        }
+      },
+      "subtype": "pivot",
+      "title": "Users Login Information by Role",
+      "type": "pivot",
+      "viewState": {
+        "activeTab": "filters"
+      },
+      "widgetTimingLoged": true
+    },
+    {
+      "canEditFilters": true,
       "dashboardid": "5a3271a13e495e00350000af",
+      "datasource": {
+        "title": "sisense_analytics",
+        "fullname": "LocalHost/sisense_analytics",
+        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
+        "address": "LocalHost",
+        "database": "asisenseXwAaanalytics",
+        "lastBuildTime": "2017-12-14T00:00:00"
+      },
+      "desc": null,
+      "disableSelctor": false,
       "drawing": true,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -1236,50 +1274,10 @@
         "showFolderNameOnMenuSelection": false,
         "resetDashFiltersAfterJTD": false
       },
+      "forcedRedraw": false,
       "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "3B600-A2D9-88",
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "triggersDomready": true,
-        "drillToAnywhere": true,
-        "autoUpdateOnEveryChange": true
-      },
-      "queryStartTime": "2017-12-15T00:00:00",
-      "realTimeRefreshing": false,
-      "style": {
-        "pageSize": 25,
-        "automaticHeight": false,
-        "colors": {
-          "rows": true,
-          "columns": false,
-          "headers": false,
-          "members": false,
-          "totals": false
-        }
-      },
-      "viewState": {
-        "activeTab": "filters"
-      },
-      "widgetTimingLoged": true
-    },
-    {
-      "title": "Actions by 10 Most Active Users - Last 30 Days",
-      "type": "chart/bar",
-      "subtype": "bar/stacked",
-      "oid": "5a32775a3e495e00350000d7",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "title": "sisense_analytics",
-        "fullname": "LocalHost/sisense_analytics",
-        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
-        "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-14T00:00:00"
-      },
-      "selection": null,
+      "instanceid": "AC677-6447-61",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -1357,27 +1355,19 @@
                 },
                 "format": {
                   "members": {
-                    "DELETE": {
-                      "color": "#c6532b",
-                      "title": "DELETE",
-                      "inResultset": true
-                    },
                     "GET": {
-                      "color": "#808080",
+                      "color": "#F89C33",
                       "title": "GET",
                       "inResultset": true
                     },
-                    "PATCH": {
-                      "color": "#FBC730",
-                      "title": "PATCH"
-                    },
-                    "POST": {
-                      "color": "#ec6333",
-                      "title": "POST"
-                    },
                     "PUT": {
-                      "color": "#ffa946",
+                      "color": "#808080",
                       "title": "PUT",
+                      "inResultset": true
+                    },
+                    "DELETE": {
+                      "color": "#FBC730",
+                      "title": "DELETE",
                       "inResultset": true
                     }
                   }
@@ -1438,36 +1428,7 @@
           }
         ]
       },
-      "canEditFilters": true,
-      "dashboardid": "5a3271a13e495e00350000af",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "AC677-6447-61",
+      "oid": "5a32775a3e495e00350000d7",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -1476,8 +1437,10 @@
         "drillToAnywhere": true,
         "selectorLocked": false
       },
-      "queryStartTime": "2017-12-15T00:00:00",
+      "queryStartTime": "2017-12-18T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": true,
@@ -1543,18 +1506,16 @@
           "enabled": true
         }
       },
+      "subtype": "bar/stacked",
+      "title": "Actions by 10 Most Active Users",
+      "type": "chart/bar",
       "viewState": {
         "activeTab": "filters"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "API Requests - Last 30 Days",
-      "type": "indicator",
-      "subtype": "indicator/numeric",
-      "oid": "5a3277e93e495e00350000e1",
-      "desc": null,
-      "source": null,
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1563,7 +1524,37 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-14T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "indicatorInstance": {
+        "type": "numericSimple"
+      },
+      "instanceid": "C4D8E-4771-E7",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -1622,37 +1613,7 @@
           }
         ]
       },
-      "dashboardid": "5a3271a13e495e00350000af",
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "indicatorInstance": {
-        "type": "numericSimple"
-      },
-      "instanceid": "C4D8E-4771-E7",
+      "oid": "5a3277e93e495e00350000e1",
       "options": {
         "dashboardFiltersMode": "filter",
         "selector": false,
@@ -1661,8 +1622,10 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "queryStartTime": "2017-12-15T00:00:00",
+      "queryStartTime": "2017-12-18T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "subtype": "simple",
         "skin": "vertical",
@@ -1721,18 +1684,17 @@
           }
         }
       },
+      "subtype": "indicator/numeric",
+      "title": "API Requests",
+      "type": "indicator",
       "viewState": {
         "activeTab": "filters"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "Error Codes",
-      "type": "chart/pie",
-      "subtype": "pie/classic",
-      "oid": "5a3286f63e495e003500012a",
-      "desc": null,
-      "source": null,
+      "canEditFilters": true,
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1740,7 +1702,35 @@
         "address": "LocalHost",
         "database": "asisenseXwAaanalytics"
       },
-      "selection": null,
+      "desc": null,
+      "disableSelctor": false,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "9E9B4-54B2-FD",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -1760,40 +1750,28 @@
                 },
                 "format": {
                   "members": {
-                    "200": {
-                      "color": "#F89C33",
-                      "title": "200"
-                    },
-                    "201": {
-                      "color": "#808080",
-                      "title": "201"
-                    },
-                    "204": {
-                      "color": "#FBC730",
-                      "title": "204"
-                    },
                     "304": {
-                      "color": "#EC6333",
+                      "color": "#F89C33",
                       "title": "304",
                       "inResultset": true
                     },
                     "400": {
-                      "color": "#ffa946",
+                      "color": "#808080",
                       "title": "400",
                       "inResultset": true
                     },
                     "401": {
-                      "color": "#939393",
+                      "color": "#FBC730",
                       "title": "401",
                       "inResultset": true
                     },
                     "403": {
-                      "color": "#ffcf45",
+                      "color": "#EC6333",
                       "title": "403",
                       "inResultset": true
                     },
                     "404": {
-                      "color": "#ff7241",
+                      "color": "#ffa946",
                       "title": "404",
                       "inResultset": true
                     }
@@ -1860,11 +1838,21 @@
           }
         ]
       },
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "oid": "5a3286f63e495e003500012a",
+      "options": {
+        "dashboardFiltersMode": "select",
+        "selector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "drillToAnywhere": true
+      },
+      "queryStartTime": "2017-12-18T00:00:00",
+      "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
-          "enabled": true,
+          "enabled": false,
           "position": "bottom"
         },
         "labels": {
@@ -1939,55 +1927,18 @@
           "enabled": true
         }
       },
-      "instanceid": "9E9B4-54B2-FD",
-      "queryStartTime": "2017-12-14T00:00:00",
-      "widgetTimingLoged": false,
-      "disableSelctor": false,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "canEditFilters": true,
-      "forcedRedraw": false,
+      "subtype": "pie/classic",
+      "title": "Error Codes",
+      "type": "chart/pie",
       "viewState": {
-        "activeTab": "filters"
+        "activeTab": "design"
       },
-      "realTimeRefreshing": false,
-      "drawing": true,
-      "options": {
-        "dashboardFiltersMode": "select",
-        "selector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "drillToAnywhere": true
-      },
-      "dashboardid": "5a3271a13e495e00350000af"
+      "widgetTimingLoged": false
     },
     {
-      "title": "User Actions by ElastiCube - Last 30 Days",
-      "type": "pivot",
-      "subtype": "pivot",
-      "oid": "5a3288ae3e495e0035000130",
-      "desc": null,
-      "source": null,
+      "colorSettingsArr": [],
+      "currentPage": 1,
+      "dashboardid": "5a3271a13e495e00350000af",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1996,102 +1947,7 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-14T00:00:00"
       },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": false
-        },
-        "panels": [
-          {
-            "name": "rows",
-            "items": [
-              {
-                "jaql": {
-                  "table": "Dim_Dashboards",
-                  "column": "ElastiCube_Name",
-                  "dim": "[Dim_Dashboards.ElastiCube_Name]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "ElastiCube_Name"
-                },
-                "field": {
-                  "id": "[Dim_Dashboards.ElastiCube_Name]",
-                  "index": 0
-                }
-              },
-              {
-                "jaql": {
-                  "table": "Dim_Users",
-                  "column": "userName",
-                  "dim": "[Dim_Users.userName]",
-                  "datatype": "text",
-                  "merged": true,
-                  "title": "userName"
-                },
-                "field": {
-                  "id": "[Dim_Users.userName]",
-                  "index": 1
-                },
-                "disabled": false
-              }
-            ]
-          },
-          {
-            "name": "values",
-            "items": [
-              {
-                "jaql": {
-                  "table": "Fact_Trace",
-                  "column": "Action_id",
-                  "dim": "[Fact_Trace.Action_id]",
-                  "datatype": "text",
-                  "merged": true,
-                  "agg": "count",
-                  "title": "# of unique Action_id",
-                  "sortDetails": {
-                    "field": 2,
-                    "dir": "asc",
-                    "sortingLastDimension": "count",
-                    "measurePath": null,
-                    "initialized": true
-                  },
-                  "sort": "asc"
-                },
-                "format": {
-                  "color": {
-                    "type": "color",
-                    "color": "transparent"
-                  },
-                  "mask": {
-                    "type": "number",
-                    "t": true,
-                    "b": true,
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  }
-                },
-                "field": {
-                  "id": "[Fact_Trace.Action_id]_count",
-                  "index": 2
-                }
-              }
-            ]
-          },
-          {
-            "name": "columns",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "colorSettingsArr": [],
-      "currentPage": 1,
-      "dashboardid": "5a3271a13e495e00350000af",
+      "desc": null,
       "drawing": true,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -2118,6 +1974,113 @@
       "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "instanceid": "72FE0-4149-CA",
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": false
+        },
+        "panels": [
+          {
+            "name": "rows",
+            "items": [
+              {
+                "jaql": {
+                  "table": "Dim_Users",
+                  "column": "userName",
+                  "dim": "[Dim_Users.userName]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "User"
+                },
+                "field": {
+                  "id": "[Dim_Users.userName]",
+                  "index": 0
+                },
+                "disabled": false
+              },
+              {
+                "jaql": {
+                  "table": "Dim_Dashboards",
+                  "column": "ElastiCube_Name",
+                  "dim": "[Dim_Dashboards.ElastiCube_Name]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "ElastiCube_Name"
+                },
+                "field": {
+                  "id": "[Dim_Dashboards.ElastiCube_Name]",
+                  "index": 1
+                }
+              },
+              {
+                "jaql": {
+                  "table": "Dim_Dashboards",
+                  "column": "Dashboard_Title",
+                  "dim": "[Dim_Dashboards.Dashboard_Title]",
+                  "datatype": "text",
+                  "merged": true,
+                  "title": "Dashboard_Title"
+                },
+                "field": {
+                  "id": "[Dim_Dashboards.Dashboard_Title]",
+                  "index": 2
+                }
+              }
+            ]
+          },
+          {
+            "name": "values",
+            "items": [
+              {
+                "jaql": {
+                  "table": "Fact_Trace",
+                  "column": "Action_id",
+                  "dim": "[Fact_Trace.Action_id]",
+                  "datatype": "text",
+                  "merged": true,
+                  "agg": "count",
+                  "title": "Total Actions",
+                  "sortDetails": {
+                    "field": 3,
+                    "dir": "asc",
+                    "sortingLastDimension": "count",
+                    "measurePath": null,
+                    "initialized": true
+                  },
+                  "sort": "asc"
+                },
+                "format": {
+                  "color": {
+                    "type": "color",
+                    "color": "transparent"
+                  },
+                  "mask": {
+                    "type": "number",
+                    "t": true,
+                    "b": true,
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  }
+                },
+                "field": {
+                  "id": "[Fact_Trace.Action_id]_count",
+                  "index": 3
+                }
+              }
+            ]
+          },
+          {
+            "name": "columns",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "oid": "5a3288ae3e495e0035000130",
       "options": {
         "dashboardFiltersMode": "filter",
         "selector": false,
@@ -2126,8 +2089,10 @@
         "selectorLocked": false,
         "autoUpdateOnEveryChange": true
       },
-      "queryStartTime": "2017-12-15T00:00:00",
+      "queryStartTime": "2017-12-18T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "pageSize": 25,
         "automaticHeight": false,
@@ -2139,6 +2104,9 @@
           "totals": false
         }
       },
+      "subtype": "pivot",
+      "title": "User Actions per ElastiCube and Dashboard",
+      "type": "pivot",
       "widgetTimingLoged": false
     }
   ],

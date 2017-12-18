@@ -1,24 +1,99 @@
 {
-  "title": "1. Overview",
-  "desc": "",
-  "source": null,
-  "type": "dashboard",
-  "style": {
-    "name": "vivid",
-    "palette": {
-      "_id": "58568303ec15d6e901b7d8ee",
-      "colors": [
-        "#F89C33",
-        "#808080",
-        "#FBC730",
-        "#EC6333"
-      ],
-      "name": "Sisense",
-      "isDefault": false,
-      "sortOrder": 40,
-      "isSystem": true
-    }
+  "datasource": {
+    "title": "sisense_analytics",
+    "fullname": "LocalHost/sisense_analytics",
+    "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
+    "address": "LocalHost",
+    "database": "asisenseXwAaanalytics"
   },
+  "desc": "",
+  "editing": true,
+  "filterToDatasourceMapping": {
+    "aLOCALHOST_aSISENSEXwAaANALYTICS": [
+      "[Dim_Date.Date (Calendar)]",
+      "[Dim_Dashboards.Dashboard_Title]",
+      "[Dim_Users.Role]",
+      "[Dim_Users.email]"
+    ]
+  },
+  "filters": [
+    {
+      "jaql": {
+        "table": "Dim_Date",
+        "column": "Date",
+        "dim": "[Dim_Date.Date (Calendar)]",
+        "datatype": "datetime",
+        "merged": true,
+        "title": "Days in Date",
+        "level": "days",
+        "collapsed": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "0FBD8-71F6-64",
+      "isCascading": false,
+      "disabled": false
+    },
+    {
+      "jaql": {
+        "table": "Dim_Dashboards",
+        "column": "Dashboard_Title",
+        "dim": "[Dim_Dashboards.Dashboard_Title]",
+        "datatype": "text",
+        "merged": true,
+        "title": "Dashboard_Title",
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        },
+        "collapsed": true
+      },
+      "instanceid": "FE8D7-1909-97",
+      "isCascading": false
+    },
+    {
+      "jaql": {
+        "table": "Dim_Users",
+        "column": "Role",
+        "dim": "[Dim_Users.Role]",
+        "datatype": "text",
+        "merged": true,
+        "title": "Role",
+        "collapsed": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "B655F-C71F-8F",
+      "isCascading": false
+    },
+    {
+      "jaql": {
+        "table": "Dim_Users",
+        "column": "email",
+        "dim": "[Dim_Users.email]",
+        "datatype": "text",
+        "merged": true,
+        "title": "User",
+        "collapsed": true,
+        "filter": {
+          "explicit": false,
+          "multiSelection": true,
+          "all": true
+        }
+      },
+      "instanceid": "5F82C-3DB9-5E",
+      "isCascading": false,
+      "disabled": false
+    }
+  ],
+  "isPublic": null,
   "layout": {
     "instanceid": "D43DB-9A53-72",
     "type": "columnar",
@@ -218,103 +293,26 @@
       }
     ]
   },
-  "original": null,
-  "datasource": {
-    "title": "sisense_analytics",
-    "fullname": "LocalHost/sisense_analytics",
-    "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
-    "address": "LocalHost",
-    "database": "asisenseXwAaanalytics"
-  },
-  "editing": true,
-  "filterToDatasourceMapping": {
-    "aLOCALHOST_aSISENSEXwAaANALYTICS": [
-      "[Dim_Date.Date (Calendar)]",
-      "[Dim_Dashboards.Dashboard_Title]",
-      "[Dim_Users.Role]",
-      "[Dim_Users.email]"
-    ]
-  },
-  "filters": [
-    {
-      "jaql": {
-        "table": "Dim_Date",
-        "column": "Date",
-        "dim": "[Dim_Date.Date (Calendar)]",
-        "datatype": "datetime",
-        "merged": true,
-        "title": "Days in Date",
-        "level": "days",
-        "collapsed": true,
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        }
-      },
-      "instanceid": "0FBD8-71F6-64",
-      "isCascading": false,
-      "disabled": false
-    },
-    {
-      "jaql": {
-        "table": "Dim_Dashboards",
-        "column": "Dashboard_Title",
-        "dim": "[Dim_Dashboards.Dashboard_Title]",
-        "datatype": "text",
-        "merged": true,
-        "title": "Dashboard_Title",
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        },
-        "collapsed": true
-      },
-      "instanceid": "FE8D7-1909-97",
-      "isCascading": false
-    },
-    {
-      "jaql": {
-        "table": "Dim_Users",
-        "column": "Role",
-        "dim": "[Dim_Users.Role]",
-        "datatype": "text",
-        "merged": true,
-        "title": "Role",
-        "collapsed": true,
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        }
-      },
-      "instanceid": "B655F-C71F-8F",
-      "isCascading": false
-    },
-    {
-      "jaql": {
-        "table": "Dim_Users",
-        "column": "email",
-        "dim": "[Dim_Users.email]",
-        "datatype": "text",
-        "merged": true,
-        "title": "User",
-        "collapsed": true,
-        "filter": {
-          "explicit": false,
-          "multiSelection": true,
-          "all": true
-        }
-      },
-      "instanceid": "5F82C-3DB9-5E",
-      "isCascading": false,
-      "disabled": true
-    }
-  ],
-  "isPublic": null,
   "oid": "5a2fe066ffc201ec16000136",
-  "parentFolder": "5a296ee599d8904878db8a0a",
+  "original": null,
+  "parentFolder": "5a2fe04cffc201ec16000134",
+  "source": null,
+  "style": {
+    "name": "vivid",
+    "palette": {
+      "_id": "58568303ec15d6e901b7d8ee",
+      "colors": [
+        "#F89C33",
+        "#808080",
+        "#FBC730",
+        "#EC6333"
+      ],
+      "name": "Sisense",
+      "isDefault": false,
+      "sortOrder": 40,
+      "isSystem": true
+    }
+  },
   "subscription": {
     "isDataChange": true,
     "type": "onUpdate",
@@ -334,14 +332,12 @@
       "isPdf": false
     }
   },
+  "title": "1. Overview",
+  "type": "dashboard",
   "widgets": [
     {
-      "title": "Users by Role",
-      "type": "chart/pie",
-      "subtype": "pie/classic",
-      "oid": "5a30f0b6f0e7c1a8150000b0",
-      "desc": null,
-      "source": null,
+      "colorSettingsArr": [],
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -350,7 +346,35 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "disableSelctor": false,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "5C9F3-F386-35",
       "metadata": {
         "ignore": {
           "dimensions": [
@@ -435,36 +459,7 @@
           }
         ]
       },
-      "colorSettingsArr": [],
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "5C9F3-F386-35",
+      "oid": "5a30f0b6f0e7c1a8150000b0",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -474,6 +469,8 @@
       },
       "queryStartTime": "2017-12-15T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": false,
@@ -545,18 +542,16 @@
           "enabled": true
         }
       },
+      "subtype": "pie/classic",
+      "title": "Users by Role",
+      "type": "chart/pie",
       "viewState": {
         "activeTab": "design"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "",
-      "type": "indicator",
-      "subtype": "indicator/numeric",
-      "oid": "5a2fe9d6ffc201ec160001af",
-      "desc": null,
-      "source": null,
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -565,7 +560,37 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "indicatorInstance": {
+        "type": "numericSimple"
+      },
+      "instanceid": "9BF30-59CD-E1",
       "metadata": {
         "ignore": {
           "dimensions": [
@@ -642,37 +667,7 @@
           }
         ]
       },
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "indicatorInstance": {
-        "type": "numericSimple"
-      },
-      "instanceid": "9BF30-59CD-E1",
+      "oid": "5a2fe9d6ffc201ec160001af",
       "options": {
         "dashboardFiltersMode": "filter",
         "selector": false,
@@ -683,6 +678,8 @@
       },
       "queryStartTime": "2017-12-14T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "subtype": "simple",
         "skin": "vertical",
@@ -741,18 +738,17 @@
           }
         }
       },
+      "subtype": "indicator/numeric",
+      "title": "",
+      "type": "indicator",
       "viewState": {
         "activeTab": "filters"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "Top 10 ElastiCubes by # of Dashboards",
-      "type": "chart/bar",
-      "subtype": "bar/classic",
-      "oid": "5a2fedb6ffc201ec160001c7",
-      "desc": null,
-      "source": null,
+      "canEditFilters": true,
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -761,7 +757,35 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
+      "desc": null,
+      "disableSelctor": false,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "29D42-98D2-3E",
       "metadata": {
         "ignore": {
           "dimensions": [
@@ -857,36 +881,7 @@
           }
         ]
       },
-      "canEditFilters": true,
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "29D42-98D2-3E",
+      "oid": "5a2fedb6ffc201ec160001c7",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -896,6 +891,8 @@
       },
       "queryStartTime": "2017-12-14T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": false,
@@ -961,18 +958,17 @@
           "enabled": true
         }
       },
+      "subtype": "bar/classic",
+      "title": "Top 10 ElastiCubes by # of Dashboards",
+      "type": "chart/bar",
       "viewState": {
         "activeTab": "design"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "",
-      "type": "indicator",
-      "subtype": "indicator/numeric",
-      "oid": "5a2fe312ffc201ec16000145",
-      "desc": null,
-      "source": null,
+      "canEditFilters": true,
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -981,65 +977,8 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": true
-        },
-        "panels": [
-          {
-            "name": "value",
-            "items": [
-              {
-                "jaql": {
-                  "table": "Dim_Users",
-                  "column": "email",
-                  "dim": "[Dim_Users.email]",
-                  "datatype": "text",
-                  "merged": true,
-                  "agg": "count",
-                  "title": "# Users"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "type": "color"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "secondary",
-            "items": []
-          },
-          {
-            "name": "min",
-            "items": []
-          },
-          {
-            "name": "max",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "dashboardid": "5a2fe066ffc201ec16000136",
+      "desc": null,
+      "disableSelctor": false,
       "drawing": true,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -1069,96 +1008,7 @@
       "indicatorInstance": {
         "type": "numericSimple"
       },
-      "instanceid": "9BF30-59CD-E1",
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "disallowSelector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "supportsHierarchies": false
-      },
-      "queryStartTime": "2017-12-14T00:00:00",
-      "realTimeRefreshing": false,
-      "style": {
-        "subtype": "simple",
-        "skin": "vertical",
-        "components": {
-          "title": {
-            "inactive": false,
-            "enabled": true
-          },
-          "icon": {
-            "inactive": true,
-            "enabled": true
-          },
-          "secondaryTitle": {
-            "inactive": true,
-            "enabled": true
-          }
-        },
-        "indicator/numeric": {
-          "subtype": "simple",
-          "skin": "vertical",
-          "components": {
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "icon": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "indicator/gauge": {
-          "subtype": "round",
-          "skin": "1",
-          "components": {
-            "ticks": {
-              "inactive": false,
-              "enabled": true
-            },
-            "labels": {
-              "inactive": false,
-              "enabled": true
-            },
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        }
-      },
-      "viewState": {
-        "activeTab": "filters"
-      },
-      "widgetTimingLoged": false
-    },
-    {
-      "title": "10 Most Active Dashboards",
-      "type": "chart/bar",
-      "subtype": "bar/classic",
-      "oid": "5a2fe38fffc201ec16000151",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "title": "sisense_analytics",
-        "fullname": "LocalHost/sisense_analytics",
-        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
-        "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-12T00:00:00"
-      },
-      "selection": null,
+      "instanceid": "3B95E-0B47-33",
       "metadata": {
         "ignore": {
           "dimensions": [
@@ -1252,39 +1102,7 @@
           }
         ]
       },
-      "canEditFilters": true,
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "indicatorInstance": {
-        "type": "numericSimple"
-      },
-      "instanceid": "3B95E-0B47-33",
+      "oid": "5a2fe38fffc201ec16000151",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -1294,6 +1112,8 @@
       },
       "queryStartTime": "2017-12-14T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": false,
@@ -1359,18 +1179,16 @@
           "enabled": true
         }
       },
+      "subtype": "bar/classic",
+      "title": "10 Most Active Dashboards",
+      "type": "chart/bar",
       "viewState": {
         "activeTab": "design"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "Activity Heat Map",
-      "type": "heatmap",
-      "subtype": "heatmap",
-      "oid": "5a3006fbffc201ec1600024b",
-      "desc": null,
-      "source": null,
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1379,7 +1197,550 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "indicatorInstance": {
+        "type": "numericSimple"
+      },
+      "instanceid": "9BF30-59CD-E1",
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": true
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "Dim_Dashboards",
+                  "column": "ElastiCube_Name",
+                  "dim": "[Dim_Dashboards.ElastiCube_Name]",
+                  "datatype": "text",
+                  "merged": true,
+                  "agg": "count",
+                  "title": "# ElastiCubes"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "oid": "5a2fe364ffc201ec1600014d",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "queryStartTime": "2017-12-14T00:00:00",
+      "realTimeRefreshing": false,
       "selection": null,
+      "source": null,
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        }
+      },
+      "subtype": "indicator/numeric",
+      "title": "",
+      "type": "indicator",
+      "viewState": {
+        "activeTab": "filters"
+      },
+      "widgetTimingLoged": false
+    },
+    {
+      "dashboardid": "5a2fe066ffc201ec16000136",
+      "datasource": {
+        "title": "sisense_analytics",
+        "fullname": "LocalHost/sisense_analytics",
+        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
+        "address": "LocalHost",
+        "database": "asisenseXwAaanalytics",
+        "lastBuildTime": "2017-12-12T00:00:00"
+      },
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "indicatorInstance": {
+        "type": "numericSimple"
+      },
+      "instanceid": "9BF30-59CD-E1",
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": true
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "table": "Dim_Users",
+                  "column": "email",
+                  "dim": "[Dim_Users.email]",
+                  "datatype": "text",
+                  "merged": true,
+                  "agg": "count",
+                  "title": "# Users"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "oid": "5a2fe312ffc201ec16000145",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "queryStartTime": "2017-12-14T00:00:00",
+      "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        }
+      },
+      "subtype": "indicator/numeric",
+      "title": "",
+      "type": "indicator",
+      "viewState": {
+        "activeTab": "filters"
+      },
+      "widgetTimingLoged": false
+    },
+    {
+      "dashboardid": "5a2fe066ffc201ec16000136",
+      "datasource": {
+        "title": "sisense_analytics",
+        "fullname": "LocalHost/sisense_analytics",
+        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
+        "address": "LocalHost",
+        "database": "asisenseXwAaanalytics",
+        "lastBuildTime": "2017-12-12T00:00:00"
+      },
+      "desc": null,
+      "drawing": true,
+      "drillToDashboardConfig": {
+        "drilledDashboardPrefix": "_drill",
+        "displayFilterPane": true,
+        "displayDashboardsPane": true,
+        "displayToolbarRow": true,
+        "displayHeaderRow": true,
+        "volatile": false,
+        "hideDrilledDashboards": true,
+        "drillToDashboardMenuCaption": "Jump to dashboard",
+        "drillToDashboardRightMenuCaption": "Jump to ",
+        "drillToDashboardNavigateType": 1,
+        "drillToDashboardNavigateTypePivot": 2,
+        "drillToDashboardNavigateTypeCharts": 1,
+        "drillToDashboardNavigateTypeOthers": 3,
+        "excludeFilterDims": [],
+        "includeFilterDims": [],
+        "drilledDashboardDisplayType": 2,
+        "dashboardIds": [],
+        "modalWindowResize": true,
+        "showFolderNameOnMenuSelection": false,
+        "resetDashFiltersAfterJTD": false
+      },
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "indicatorInstance": {
+        "type": "numericSimple"
+      },
+      "instanceid": "9BF30-59CD-E1",
+      "metadata": {
+        "ignore": {
+          "dimensions": [],
+          "all": true
+        },
+        "panels": [
+          {
+            "name": "value",
+            "items": [
+              {
+                "jaql": {
+                  "type": "measure",
+                  "formula": "[EA6B1-E28]",
+                  "context": {
+                    "[EA6B1-E28]": {
+                      "table": "Fact_DashboardWidget",
+                      "column": "Dashboard_Id",
+                      "dim": "[Fact_DashboardWidget.Dashboard_Id]",
+                      "datatype": "text",
+                      "merged": true,
+                      "agg": "count",
+                      "title": "# of unique Dashboard_Id"
+                    }
+                  },
+                  "title": "# Dashboards"
+                },
+                "format": {
+                  "mask": {
+                    "type": "number",
+                    "abbreviations": {
+                      "t": true,
+                      "b": true,
+                      "m": true,
+                      "k": false
+                    },
+                    "separated": true,
+                    "decimals": "auto",
+                    "isdefault": true
+                  },
+                  "color": {
+                    "type": "color"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "secondary",
+            "items": []
+          },
+          {
+            "name": "min",
+            "items": []
+          },
+          {
+            "name": "max",
+            "items": []
+          },
+          {
+            "name": "filters",
+            "items": []
+          }
+        ]
+      },
+      "oid": "5a2fe2f9ffc201ec16000140",
+      "options": {
+        "dashboardFiltersMode": "filter",
+        "selector": false,
+        "disallowSelector": true,
+        "triggersDomready": true,
+        "autoUpdateOnEveryChange": true,
+        "supportsHierarchies": false
+      },
+      "queryStartTime": "2017-12-14T00:00:00",
+      "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
+      "style": {
+        "subtype": "simple",
+        "skin": "vertical",
+        "components": {
+          "title": {
+            "inactive": false,
+            "enabled": true
+          },
+          "icon": {
+            "inactive": true,
+            "enabled": true
+          },
+          "secondaryTitle": {
+            "inactive": true,
+            "enabled": true
+          }
+        },
+        "indicator/numeric": {
+          "subtype": "simple",
+          "skin": "vertical",
+          "components": {
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "icon": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        },
+        "indicator/gauge": {
+          "subtype": "round",
+          "skin": "1",
+          "components": {
+            "ticks": {
+              "inactive": false,
+              "enabled": true
+            },
+            "labels": {
+              "inactive": false,
+              "enabled": true
+            },
+            "title": {
+              "inactive": false,
+              "enabled": true
+            },
+            "secondaryTitle": {
+              "inactive": true,
+              "enabled": true
+            }
+          }
+        }
+      },
+      "subtype": "indicator/numeric",
+      "title": "",
+      "type": "indicator",
+      "viewState": {
+        "activeTab": "filters"
+      },
+      "widgetTimingLoged": false
+    },
+    {
+      "dashboardid": "5a2fe066ffc201ec16000136",
+      "datasource": {
+        "title": "sisense_analytics",
+        "fullname": "LocalHost/sisense_analytics",
+        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
+        "address": "LocalHost",
+        "database": "asisenseXwAaanalytics",
+        "lastBuildTime": "2017-12-12T00:00:00"
+      },
+      "desc": null,
+      "drawing": true,
+      "forcedRedraw": false,
+      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
+      "instanceid": "5AC51-E915-34",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -1451,8 +1812,8 @@
                   },
                   "color": {
                     "steps": 7,
-                    "min": "#6c6c6c",
-                    "max": "#6eda55",
+                    "min": "#bfbfbf",
+                    "max": "#00a808",
                     "minvalue": null,
                     "midvalue": null,
                     "maxvalue": null,
@@ -1472,12 +1833,7 @@
           }
         ]
       },
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "drawing": true,
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "5AC51-E915-34",
+      "oid": "5a3006fbffc201ec1600024b",
       "options": {
         "dashboardFiltersMode": "select",
         "triggersDomready": true,
@@ -1486,8 +1842,10 @@
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
       },
-      "queryStartTime": "2017-12-14T00:00:00",
+      "queryStartTime": "2017-12-18T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "domain/month": false,
         "domain/quarter": true,
@@ -1507,18 +1865,18 @@
           "month": 10
         }
       },
+      "subtype": "heatmap",
+      "title": "Activity Heat Map",
+      "type": "heatmap",
       "viewState": {
         "activeTab": "design"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "",
-      "type": "indicator",
-      "subtype": "indicator/numeric",
-      "oid": "5a2fe364ffc201ec1600014d",
-      "desc": null,
-      "source": null,
+      "canEditFilters": true,
+      "colorSettingsArr": [],
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1527,65 +1885,8 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": true
-        },
-        "panels": [
-          {
-            "name": "value",
-            "items": [
-              {
-                "jaql": {
-                  "table": "Dim_Dashboards",
-                  "column": "ElastiCube_Name",
-                  "dim": "[Dim_Dashboards.ElastiCube_Name]",
-                  "datatype": "text",
-                  "merged": true,
-                  "agg": "count",
-                  "title": "# ElastiCubes"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "type": "color"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "secondary",
-            "items": []
-          },
-          {
-            "name": "min",
-            "items": []
-          },
-          {
-            "name": "max",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "dashboardid": "5a2fe066ffc201ec16000136",
+      "desc": null,
+      "disableSelctor": false,
       "drawing": true,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -1612,99 +1913,7 @@
       "forcedRedraw": false,
       "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "indicatorInstance": {
-        "type": "numericSimple"
-      },
-      "instanceid": "9BF30-59CD-E1",
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "disallowSelector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "supportsHierarchies": false
-      },
-      "queryStartTime": "2017-12-14T00:00:00",
-      "realTimeRefreshing": false,
-      "style": {
-        "subtype": "simple",
-        "skin": "vertical",
-        "components": {
-          "title": {
-            "inactive": false,
-            "enabled": true
-          },
-          "icon": {
-            "inactive": true,
-            "enabled": true
-          },
-          "secondaryTitle": {
-            "inactive": true,
-            "enabled": true
-          }
-        },
-        "indicator/numeric": {
-          "subtype": "simple",
-          "skin": "vertical",
-          "components": {
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "icon": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "indicator/gauge": {
-          "subtype": "round",
-          "skin": "1",
-          "components": {
-            "ticks": {
-              "inactive": false,
-              "enabled": true
-            },
-            "labels": {
-              "inactive": false,
-              "enabled": true
-            },
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        }
-      },
-      "viewState": {
-        "activeTab": "filters"
-      },
-      "widgetTimingLoged": false
-    },
-    {
-      "title": "10 Most Active Users",
-      "type": "chart/bar",
-      "subtype": "bar/classic",
-      "oid": "5a2feb77ffc201ec160001b5",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "title": "sisense_analytics",
-        "fullname": "LocalHost/sisense_analytics",
-        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
-        "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-12T00:00:00"
-      },
-      "selection": null,
+      "instanceid": "F1EBE-FD80-E1",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -1829,37 +2038,7 @@
           }
         ]
       },
-      "canEditFilters": true,
-      "colorSettingsArr": [],
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "F1EBE-FD80-E1",
+      "oid": "5a2feb77ffc201ec160001b5",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -1869,6 +2048,8 @@
       },
       "queryStartTime": "2017-12-14T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": false,
@@ -1934,18 +2115,17 @@
           "enabled": true
         }
       },
+      "subtype": "bar/classic",
+      "title": "10 Most Active Users",
+      "type": "chart/bar",
       "viewState": {
         "activeTab": "design"
       },
       "widgetTimingLoged": false
     },
     {
-      "title": "",
-      "type": "indicator",
-      "subtype": "indicator/numeric",
-      "oid": "5a2fe2f9ffc201ec16000140",
-      "desc": null,
-      "source": null,
+      "canEditFilters": true,
+      "dashboardid": "5a2fe066ffc201ec16000136",
       "datasource": {
         "title": "sisense_analytics",
         "fullname": "LocalHost/sisense_analytics",
@@ -1954,72 +2134,8 @@
         "database": "asisenseXwAaanalytics",
         "lastBuildTime": "2017-12-12T00:00:00"
       },
-      "selection": null,
-      "metadata": {
-        "ignore": {
-          "dimensions": [],
-          "all": true
-        },
-        "panels": [
-          {
-            "name": "value",
-            "items": [
-              {
-                "jaql": {
-                  "type": "measure",
-                  "formula": "[EA6B1-E28]",
-                  "context": {
-                    "[EA6B1-E28]": {
-                      "table": "Fact_DashboardWidget",
-                      "column": "Dashboard_Id",
-                      "dim": "[Fact_DashboardWidget.Dashboard_Id]",
-                      "datatype": "text",
-                      "merged": true,
-                      "agg": "count",
-                      "title": "# of unique Dashboard_Id"
-                    }
-                  },
-                  "title": "# Dashboards"
-                },
-                "format": {
-                  "mask": {
-                    "type": "number",
-                    "abbreviations": {
-                      "t": true,
-                      "b": true,
-                      "m": true,
-                      "k": false
-                    },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
-                  },
-                  "color": {
-                    "type": "color"
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "name": "secondary",
-            "items": []
-          },
-          {
-            "name": "min",
-            "items": []
-          },
-          {
-            "name": "max",
-            "items": []
-          },
-          {
-            "name": "filters",
-            "items": []
-          }
-        ]
-      },
-      "dashboardid": "5a2fe066ffc201ec16000136",
+      "desc": null,
+      "disableSelctor": false,
       "drawing": true,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -2046,99 +2162,7 @@
       "forcedRedraw": false,
       "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
       "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "indicatorInstance": {
-        "type": "numericSimple"
-      },
-      "instanceid": "9BF30-59CD-E1",
-      "options": {
-        "dashboardFiltersMode": "filter",
-        "selector": false,
-        "disallowSelector": true,
-        "triggersDomready": true,
-        "autoUpdateOnEveryChange": true,
-        "supportsHierarchies": false
-      },
-      "queryStartTime": "2017-12-14T00:00:00",
-      "realTimeRefreshing": false,
-      "style": {
-        "subtype": "simple",
-        "skin": "vertical",
-        "components": {
-          "title": {
-            "inactive": false,
-            "enabled": true
-          },
-          "icon": {
-            "inactive": true,
-            "enabled": true
-          },
-          "secondaryTitle": {
-            "inactive": true,
-            "enabled": true
-          }
-        },
-        "indicator/numeric": {
-          "subtype": "simple",
-          "skin": "vertical",
-          "components": {
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "icon": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        },
-        "indicator/gauge": {
-          "subtype": "round",
-          "skin": "1",
-          "components": {
-            "ticks": {
-              "inactive": false,
-              "enabled": true
-            },
-            "labels": {
-              "inactive": false,
-              "enabled": true
-            },
-            "title": {
-              "inactive": false,
-              "enabled": true
-            },
-            "secondaryTitle": {
-              "inactive": true,
-              "enabled": true
-            }
-          }
-        }
-      },
-      "viewState": {
-        "activeTab": "filters"
-      },
-      "widgetTimingLoged": false
-    },
-    {
-      "title": "10 Least Active Users",
-      "type": "chart/bar",
-      "subtype": "bar/classic",
-      "oid": "5a2fec13ffc201ec160001ba",
-      "desc": null,
-      "source": null,
-      "datasource": {
-        "title": "sisense_analytics",
-        "fullname": "LocalHost/sisense_analytics",
-        "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
-        "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-12T00:00:00"
-      },
-      "selection": null,
+      "instanceid": "5FB73-F27D-AF",
       "metadata": {
         "ignore": {
           "dimensions": [],
@@ -2263,36 +2287,7 @@
           }
         ]
       },
-      "canEditFilters": true,
-      "dashboardid": "5a2fe066ffc201ec16000136",
-      "disableSelctor": false,
-      "drawing": true,
-      "drillToDashboardConfig": {
-        "drilledDashboardPrefix": "_drill",
-        "displayFilterPane": true,
-        "displayDashboardsPane": true,
-        "displayToolbarRow": true,
-        "displayHeaderRow": true,
-        "volatile": false,
-        "hideDrilledDashboards": true,
-        "drillToDashboardMenuCaption": "Jump to dashboard",
-        "drillToDashboardRightMenuCaption": "Jump to ",
-        "drillToDashboardNavigateType": 1,
-        "drillToDashboardNavigateTypePivot": 2,
-        "drillToDashboardNavigateTypeCharts": 1,
-        "drillToDashboardNavigateTypeOthers": 3,
-        "excludeFilterDims": [],
-        "includeFilterDims": [],
-        "drilledDashboardDisplayType": 2,
-        "dashboardIds": [],
-        "modalWindowResize": true,
-        "showFolderNameOnMenuSelection": false,
-        "resetDashFiltersAfterJTD": false
-      },
-      "forcedRedraw": false,
-      "iconSmall": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "iconSmallWizard": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkFDOTk4NjMxNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkFDOTk4NjMyNzU1MTExRTM4QkE0QjUwRjg4NjAzOUM1Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QUM5OTg2MkY3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QUM5OTg2MzA3NTUxMTFFMzhCQTRCNTBGODg2MDM5QzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ed6mDAAACVUlEQVR42uyYzytmURjHXWPCbsTkHxAyG1Ga1SSr2chWJFnIu2AW76zFQkqzkCl2RLGXpYVSFhZIfkzZyMbPMRYkkVyfh0P3feec+97z3iMppz6d4znnfu/z3POcHy/P9/2ct1xyc956kRmAev+xVL/EO77UNtSDD9Wufc+LKfCRqgxEZ9fzvEvHgafob68uXDpJIXEc+mkewx/YgH/YJqDYhePwnz62CSiOFQAOfqCagz4oCnTlQwcsM6YkhvMZ9RlTEmcGfsD3kH6Z8pEYE2Cln2f4yoVKSKZrhNzeD3QnIjjRjEYPz50ZvnKKPrltrY9GD/WZaREPQFK1v8FXFVgBVXnE7bkKlmz0ccpa35RClYF2RaB9Z5EKYWOd6ZsCkByTLUuO6cEnIylxQ7UZQVzGbYX0a/VJJWt9bQA4Ok/1WXYB2r/Sun9HeMEUz52bOnH0WZ92Vvo8d25cxCqIK6orTde4yts2w6Nr8DOTBzjgRD83w57fCutwCDNQSmAy7e3QLadjYPhfGJKXM+Yi4p7fCutwCDNQSmAZ9RlzEbqNKuebqKYDphZZcNjrcFAW0KigDi3ROVH2qAeWVh97HQ4+66tD60Ff2VNK2F2oU2OrhRpYCaTaaZYHViR9nD7N9jpdYLDnO7qrOdEPC2BWYzsIfp2YxYl+WABjMAy36u8daCRlrh0FoNUnZaz0w7ZRWTBJFmkv9ae0+1DsohZkkkX6oJ92H8o6gAQOH5l+/ViUPQKe1NgTOHxk2JWs9Al4UhdAl6MPvAi6AJzre+//lXjlci/AAOnMDanQIR59AAAAAElFTkSuQmCC",
-      "instanceid": "5FB73-F27D-AF",
+      "oid": "5a2fec13ffc201ec160001ba",
       "options": {
         "dashboardFiltersMode": "select",
         "selector": true,
@@ -2302,6 +2297,8 @@
       },
       "queryStartTime": "2017-12-14T00:00:00",
       "realTimeRefreshing": false,
+      "selection": null,
+      "source": null,
       "style": {
         "legend": {
           "enabled": false,
@@ -2368,6 +2365,9 @@
           "enabled": true
         }
       },
+      "subtype": "bar/classic",
+      "title": "10 Least Active Users",
+      "type": "chart/bar",
       "viewState": {
         "activeTab": "design"
       },
