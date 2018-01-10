@@ -1,5 +1,5 @@
 {
-  "title": "5. Performance",
+  "title": "4. Performance",
   "oid": "5a49ead38752db22fc12b5fc",
   "desc": "",
   "source": null,
@@ -34,17 +34,34 @@
                   {
                     "minHeight": 64,
                     "maxHeight": 1028,
-                    "height": "128px",
+                    "height": "336px",
                     "minWidth": 48,
                     "maxWidth": 1028,
                     "defaultWidth": 512,
                     "widgetid": "5a49f7078752db22fc12b846"
                   }
                 ],
-                "width": 100,
+                "width": 50,
                 "stretchable": false,
-                "pxlWidth": 1439,
+                "pxlWidth": 720,
                 "index": 0
+              },
+              {
+                "elements": [
+                  {
+                    "minHeight": 182,
+                    "maxHeight": 1000,
+                    "minWidth": 150,
+                    "maxWidth": 1000,
+                    "height": "336px",
+                    "defaultWidth": 512,
+                    "widgetid": "5a49f2858752db22fc12b753"
+                  }
+                ],
+                "width": 50,
+                "stretchable": false,
+                "pxlWidth": 719,
+                "index": 1
               }
             ]
           },
@@ -62,27 +79,10 @@
                     "widgetid": "5a49ec528752db22fc12b64b"
                   }
                 ],
-                "width": 68.10284920083392,
+                "width": 100,
                 "stretchable": false,
-                "pxlWidth": 980,
+                "pxlWidth": 1091,
                 "index": 0
-              },
-              {
-                "elements": [
-                  {
-                    "minHeight": 182,
-                    "maxHeight": 1000,
-                    "minWidth": 150,
-                    "maxWidth": 1000,
-                    "height": "352px",
-                    "defaultWidth": 512,
-                    "widgetid": "5a49f2858752db22fc12b753"
-                  }
-                ],
-                "width": 31.897150799166084,
-                "stretchable": false,
-                "pxlWidth": 459,
-                "index": 1
               }
             ]
           },
@@ -286,8 +286,7 @@
         "fullname": "LocalHost/sisense_analytics",
         "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
         "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-17T00:00:00"
+        "database": "asisenseXwAaanalytics"
       },
       "selection": null,
       "metadata": {
@@ -523,8 +522,7 @@
         "fullname": "LocalHost/sisense_analytics",
         "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
         "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-17T00:00:00"
+        "database": "asisenseXwAaanalytics"
       },
       "selection": null,
       "metadata": {
@@ -749,7 +747,7 @@
         }
       },
       "instanceid": "BE8CD-F25C-F6",
-      "queryStartTime": "2018-01-02T00:00:00",
+      "queryStartTime": "2018-01-04T00:00:00",
       "widgetTimingLoged": true,
       "drillToDashboardConfig": {
         "drilledDashboardPrefix": "_drill",
@@ -786,7 +784,10 @@
         "autoUpdateOnEveryChange": true
       },
       "drawing": true,
-      "currentPage": 0
+      "currentPage": 0,
+      "viewState": {
+        "activeTab": "filters"
+      }
     },
     {
       "title": "Average Response Time by User(ms)",
@@ -799,8 +800,7 @@
         "fullname": "LocalHost/sisense_analytics",
         "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
         "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-17T00:00:00"
+        "database": "asisenseXwAaanalytics"
       },
       "selection": null,
       "metadata": {
@@ -1056,8 +1056,7 @@
         "fullname": "LocalHost/sisense_analytics",
         "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
         "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-17T00:00:00"
+        "database": "asisenseXwAaanalytics"
       },
       "selection": null,
       "metadata": {
@@ -1205,8 +1204,7 @@
         "fullname": "LocalHost/sisense_analytics",
         "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
         "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-17T00:00:00"
+        "database": "asisenseXwAaanalytics"
       },
       "selection": null,
       "metadata": {
@@ -1229,16 +1227,16 @@
                 },
                 "format": {
                   "mask": {
-                    "type": "number",
                     "abbreviations": {
                       "t": true,
                       "b": true,
                       "m": true,
                       "k": false
                     },
-                    "separated": true,
-                    "decimals": "auto",
-                    "isdefault": true
+                    "decimals": 0,
+                    "number": {
+                      "separated": true
+                    }
                   },
                   "color": {
                     "color": "#F89C33",
@@ -1379,7 +1377,7 @@
         }
       },
       "instanceid": "36715-BEE3-73",
-      "queryStartTime": "2018-01-02T00:00:00",
+      "queryStartTime": "2018-01-09T00:00:00",
       "drawing": true,
       "widgetTimingLoged": false,
       "forcedRedraw": false,
@@ -1416,6 +1414,9 @@
         "triggersDomready": true,
         "autoUpdateOnEveryChange": true,
         "supportsHierarchies": false
+      },
+      "viewState": {
+        "activeTab": "filters"
       }
     },
     {
@@ -1429,8 +1430,7 @@
         "fullname": "LocalHost/sisense_analytics",
         "id": "aLOCALHOST_aSISENSEXwAaANALYTICS",
         "address": "LocalHost",
-        "database": "asisenseXwAaanalytics",
-        "lastBuildTime": "2017-12-17T00:00:00"
+        "database": "asisenseXwAaanalytics"
       },
       "selection": null,
       "metadata": {
